@@ -1,9 +1,9 @@
 def prompt(message)
- Kernel.puts("=> #{message}")
+  Kernel.puts("=> #{message}")
 end
 
 def valid_number?(num)
-  num.to_i() != 0
+  num.to_i().nonzero?()
 end
 
 def operation_to_message(op)
@@ -14,7 +14,7 @@ def operation_to_message(op)
     'Subtracting'
   when '3'
     'Multiplying'
-  when
+  when '4'
     'Dividing'
   end
 end
@@ -90,7 +90,7 @@ loop do # main loop
              number1.to_i() * number2.to_i()
            when '4'
              number1.to_f() / number2.to_f()
-  end
+           end
 
   prompt("The result is #{result}")
 
